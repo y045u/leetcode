@@ -38,8 +38,16 @@ class Solution:
             ・
         '''
         if root is None:
-            return 0
+            return root
         
-        left = 1 + 
+        self.ans = []
+        self.dfs(root)
+        
+        return self.ans
 
-        return 1 + max(self.left(), self.right())
+    def dfs(self, node):
+        if node:
+            self.dfs(node.left)
+            self.ans.append(node.val)
+            self.dfs(node.right)
+
